@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third party applications
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +128,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# My settings
+LOGIN_URL = '/users/login/'
+
+# Settings django-bootstrap3
+BOOTSTRAP3 = {
+    'include_jquery': True,
+
+}
