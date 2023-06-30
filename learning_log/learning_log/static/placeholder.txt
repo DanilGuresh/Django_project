@@ -1,0 +1,2 @@
+# This file is required to be included in the catalog project learning_log/static/.
+# Django collects static files and puts them in a directory learning_log/static/.

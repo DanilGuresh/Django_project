@@ -134,5 +134,22 @@ LOGIN_URL = '/users/login/'
 # Settings django-bootstrap3
 BOOTSTRAP3 = {
     'include_jquery': True,
-
 }
+
+# Settings Heroku
+if os.getcwd() == '/app':
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default='postgres://localhost')
+    }
+
+    # Header Support 'X-Forwarded-Proto' for request.is_secure().
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PHOTO', 'https')
+
+    # All host headers allowed
+    ALLOWED_HOSTS = ['*']
+
+    # Static resource configuration
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = 'staticfiles'
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
